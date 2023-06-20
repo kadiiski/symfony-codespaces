@@ -22,12 +22,10 @@ RUN apt-get update -yq \
     # Install Composer
     && wget https://getcomposer.org/installer \
     && php installer --install-dir=/usr/local/bin --filename=composer \
-    # Install Symfony CLI \
-    && wget https://get.symfony.com/cli/installer -O - | bash \
     # Clean up some things
     && rm installer /tmp/php.ini \
     && rm -rf /var/lib/apt/lists/* \
     # Create a user
-    && useradd -m symfony -p symfony
-USER symfony
+    && useradd -m drupal -p drupal
+USER drupal
 ENV SHELL /bin/bash
