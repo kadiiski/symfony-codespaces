@@ -3,11 +3,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 USER root
 COPY php.ini /tmp
 
-RUN apt-get -y install apt-transport-https lsb-release ca-certificates curl \
-    curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg \
-    sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' \
-    apt-get update
-
 RUN apt-get update -yq
     # Add updated php sources
 RUN apt-get install curl -yq
