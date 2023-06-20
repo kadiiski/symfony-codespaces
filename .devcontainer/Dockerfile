@@ -25,6 +25,7 @@ RUN wget https://getcomposer.org/installer
 RUN php installer --install-dir=/usr/local/bin --filename=composer
     # Clean up some things
 RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
     # Clean up some things
 RUN rm installer /tmp/php.ini
 RUN rm -rf /var/lib/apt/lists/*
