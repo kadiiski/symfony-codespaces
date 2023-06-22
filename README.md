@@ -10,7 +10,7 @@ Before setting up this project, make sure you have the following dependencies in
 - [Composer](https://getcomposer.org/)
 - [Symfony CLI](https://symfony.com/download)
 
-## Getting Started
+## Getting Started (local)
 
 To set up this Symfony project locally, follow these steps:
 
@@ -26,26 +26,45 @@ git clone https://github.com/your-username/symfony-codespaces.git
 cd symfony-codespaces
 ```
 
-3. Install the project dependencies using Composer:
+3. Setup a symfony project
+```
+symfony new my_project --version="6.3.*" --webapp
+```
+
+4. Install the project dependencies using Composer:
 ```bash
 composer install
 ```
 
-4. Start the Symfony development server:
+5. Start the Symfony development server:
 ```bash
 symfony server:start
 ```
 
-5. Open your web browser and visit http://localhost:8000 to see the Symfony application running.
+6. Open your web browser and visit http://localhost:8000 to see the Symfony application running.
 
-## CodeSpaces Configuration
+## Getting Started (CodeSpaces)
 This repository is pre-configured to work with CodeSpaces, allowing you to easily develop in a cloud-based development environment. To set up CodeSpaces for this project, follow these steps:
 
 1. Create a CodeSpace from this GitHub repository by clicking on the green "Code" button and selecting "Open with CodeSpaces."
+(you can also fork the repository and commit your project changes there as well)
 
-2. Wait for the CodeSpace to be created and initialized.
+3. Wait for the CodeSpace to be created and initialized.
 
-3. Once the CodeSpace is ready, you can start developing right away in the cloud.
+4. Once the CodeSpace is ready, you can start developing right away in the cloud.
+
+5. Example setup in the CodeSpaces
+```
+symfony new my_project --version="6.3.*" --webapp
+```
+Then `cd new_project` and `symfony server:start` - now you can access you symfony instance and start developing.
+
+### CodeSpaces Profiler
+To display the symfony profiler (very useful), in your symfony project, go to `config/packages/framework.yaml` and add the following under `framework`:
+```
+trusted_proxies: '127.0.0.1'
+trusted_headers: ['x-forwarded-for', 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port', 'x-forwarded-prefix']
+```
 
 ## Useful Commands
 Here are some useful commands that you can use while working with this Symfony project:
