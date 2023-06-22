@@ -2,9 +2,9 @@
 
 This repository contains a Symfony project configured to work with CodeSpaces, making it easy to get started with Symfony development.
 
-## Prerequisites
+## Prerequisites (local)
 
-Before setting up this project, make sure you have the following dependencies installed on your system:
+Before setting up this project lozally, make sure you have the following dependencies installed on your system:
 
 - [PHP](https://www.php.net/) (version 8.2 or higher)
 - [Composer](https://getcomposer.org/)
@@ -47,7 +47,8 @@ symfony server:start
 This repository is pre-configured to work with CodeSpaces, allowing you to easily develop in a cloud-based development environment. To set up CodeSpaces for this project, follow these steps:
 
 1. Create a CodeSpace from this GitHub repository by clicking on the green "Code" button and selecting "Open with CodeSpaces."
-(you can also fork the repository and commit your project changes there as well)
+- you can also fork the repository and commit your project changes there as well)
+- you can also create a separate repository for your project and clone it inside the codespace so you can develop and still commit your code
 
 3. Wait for the CodeSpace to be created and initialized.
 
