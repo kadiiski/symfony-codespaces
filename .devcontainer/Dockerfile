@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
-RUN passwd root
+RUN echo "root:root" | chpasswd
 COPY php.ini /tmp
 
 RUN apt-get update -yq
