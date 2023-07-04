@@ -24,7 +24,7 @@ RUN apt-get install nodejs -yq
 RUN wget https://getcomposer.org/installer
 RUN php installer --install-dir=/usr/local/bin --filename=composer
     # Install MySql
-RUN apt-get update && apt-get install -y mysql-server
+RUN apt-get update && apt-get install -y mariadb-server
     # Clean up some things
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
