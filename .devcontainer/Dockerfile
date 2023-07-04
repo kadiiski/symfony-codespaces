@@ -1,6 +1,7 @@
 FROM debian:bullseye-slim
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
+RUN passwd root
 COPY php.ini /tmp
 
 RUN apt-get update -yq
@@ -23,6 +24,8 @@ RUN apt-get install nodejs -yq
     # Install Composer
 RUN wget https://getcomposer.org/installer
 RUN php installer --install-dir=/usr/local/bin --filename=composer
+    # Install MySql
+RUN apt-get update && apt-get install -y mysql-server
     # Clean up some things
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
@@ -30,6 +33,6 @@ RUN mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
 RUN rm installer /tmp/php.ini
 RUN rm -rf /var/lib/apt/lists/*
     # Create a user
-RUN useradd -m drupal -p drupal
-USER drupal
+RUN useradd -m symfony -p symfony
+USER symfony
 ENV SHELL /bin/bash
