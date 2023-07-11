@@ -33,6 +33,6 @@ RUN mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
 RUN rm installer /tmp/php.ini
 RUN rm -rf /var/lib/apt/lists/*
     # Create a user
-# RUN useradd -m symfony -p symfony
-# USER symfony
+#RUN useradd -m symfony -p symfony
+#USER symfony
 ENV SHELL /bin/bash
